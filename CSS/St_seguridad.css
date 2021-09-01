@@ -1,0 +1,119 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+  
+  html {
+    height: 100%;
+  }
+  
+  body {
+    font-family: "Public Sans", sans-serif;
+    font-size: 1.2rem;
+    min-height: 100%;
+  }
+  
+  .grid-container > * {
+    box-shadow: -1px 1px 7px 0px rgba(0, 0, 0, 0.75);
+    border-radius: 4px;
+    padding: 10px;
+    text-align: center;
+  }
+  
+  .titulo {
+    grid-area: titulo;
+    background-color: rgba(132, 134, 17, 0.377);
+  }
+  
+  .imagen {
+    grid-area: imagen;
+    background-color: #d0fdcf;
+  }
+  
+  .textos {
+    grid-area: textos;
+    background-color: #f4f769;
+    text-align: justify;
+  }
+  
+  
+  .textos2 {
+    grid-area: textos2;
+    background-color: #f4f769;
+    text-align: justify;
+  }
+  
+
+  
+  .btn{
+    cursor: pointer;
+    border:2px solid rgb(7, 7, 7);
+    background: rgb(3, 88, 28);
+    width: 20%;
+    border-radius: 14px;
+    margin: 5px 350px;
+    padding: 5px 25px;
+    font-weight:lighter;
+    1display: inline-block;
+    font-size: 12px;
+    font-style: italic;
+    color: rgb(235, 225, 225);
+    grid-area: btn;
+}
+
+.btn:hover{
+    opacity: .4;
+
+ }
+
+  .footer {
+    grid-area: footer;
+    background-color: #8c96a0;
+    text-align: left;
+    font-size: .8rem;
+  }
+  
+  .grid-container {
+    display: grid;
+    gap: 5px;
+    grid-template:
+      "titulo"  50px
+      "imagen" 100px
+      "textos"   auto
+      "textos2"    auto
+      "btn" 50px
+      "footer"  30px;
+  }
+
+  
+  @media (min-width: 600px) {
+    .grid-container {
+      /* grid-template-columns: 200px auto;
+      grid-template-rows: 100px 50px auto 100px;
+      grid-template-areas: 
+      "header  header"
+      "sidebar main"
+      "footer  footer"; */
+  
+      grid-template:
+        "titulo titulo" 50px
+         "imagen textos"   auto
+         "textos2 textos2"   auto
+         "btn btn" 50px
+        "footer  footer" 30px /
+        200px    auto;
+    }
+  }
+  
+  @media (min-width: 900px) {
+    .grid-container {
+      grid-template:
+        "titulo titulo titulo"  50px
+        "imagen textos  textos" 28%
+        "textos2  textos2 textos2" auto
+        ". btn btn" 50% 50px
+        "footer  footer footer"  100px /
+        200px    auto   200px;
+    }
+  }
